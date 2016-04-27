@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <meta charset="UTF-8">
+    <title>Data Binding</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+    media="screen" charset="utf-8">
+  </head>
+
+  <body>
+    <div class="container">
+
+      <h1>My favorite <span ng-bind="adjective"></span> baby animal is: <span ng-bind="animal"></span></h1>
+      <label for="animal">Baby Animal</label>
+      <input id="animal" type="text" ng-model="animal">
+
+      <select name="" id="adjective" ng-model="adjective">
+        <option value="cute">Cute</option>
+        <option value="weird">Weird</option>
+        <option value="weird and cute">Weird and Cute</option>
+      </select>
+
+    </div>
+  </body>
+
+</html>

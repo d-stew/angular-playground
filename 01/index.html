@@ -11,7 +11,7 @@
   <body>
     <div class="container">
 
-      <h1>My favorite cute baby animal is: {{ animal }}</h1>
+      <h1>My favorite cute baby animal is: <span ng-bind="animal"></span></h1>
       <label for="animal">Baby Animal</label>
       <input id="animal" type="text" ng-model="animal">
 
