@@ -12,6 +12,9 @@
       .controller("babyController", function($scope) {
         $scope.animal = "marine iguana"
         $scope.adjective = "weird and cute"
+        $scope.isCute = function() {
+          return $scope.adjective == "cute" || $scope.adjective == "weird and cute" ? "OMG SO CUTE" : "not cute."
+        }
       })
     </script>
 
@@ -25,6 +28,8 @@
 
       <!-- ng-init prepopulates stuff, sets default values -->
       <input id="animal" type="text" ng-model="animal" placeholder="FAVE ANIMAL">
+
+      <span ng-bind="isCute()"></span>
 
       <select name="" id="adjective" ng-model="adjective">
         <option value="cute">Cute</option>

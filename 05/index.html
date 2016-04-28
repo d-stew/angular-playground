@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="UTF-8">
+    <title>Built-In Directives</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+    media="screen" charset="utf-8">
+
+
+  </head>
+
+  <body>
+
+    <div>
+      <i>myApp: </i>
+      <input placeholder="HTML input..." type="text" ng-model="data.name">
+      <span class="angular-binding">{{data.name}}</span>
+    </div>
+    <div ng-controller="Ctrl1">
+      <i>Ctrl1: </i>
+      <input placeholder="HTML input..." type="text" ng-model="data.name">
+      <span class="angular-binding">{{data.name}}</span>
+    </div>
+    <div ng-controller="Ctrl2">
+      <i>Ctrl2: </i>
+      <input placeholder="HTML input..." type="text" ng-model="data.name">
+      <span class="angular-binding">{{data.name}}</span>
+    </div>
+
+
+    <script>
+      angular.module("myApp", [])
+      .controller("Ctrl1", ["$scope", function($scope) {
+      }])
+      .controller("Ctrl2", ["$rootScope", function($rootScope) {
+        $rootScope.data = {};
+      }])
+    </script>
+
+  </body>
+
+</html>

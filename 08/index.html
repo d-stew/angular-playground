@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="UTF-8">
+    <title>Built-In Directives</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+    media="screen" charset="utf-8">
+  </head>
+
+  <body ng-app="angular-events" ng-cloak>
+    <div class="container" ng-controller="mainCtrl">
+      <div class="row">
+        <h3 ng-bind="enterLeave"></h3>
+      </div>
+      <div class="row">
+        <div ng-mouseenter="setEnter($event, 'Col 1')" ng-mouseleave="setLeave('Col 1')" class="four columns">
+          Col 1
+        </div>
+        <div ng-mouseenter="setEnter($event, 'Col 2')" ng-mouseleave="setLeave('Col 2')">
+          Col 2
+        </div>
+        <div ng-mouseenter="setEnter($event, 'Col 3')" ng-mouseleave="setLeave('Col 3')">
+          Col 3
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script>
+      var app = angular.module("angular-Events", []);
+
+      app.controller("mainCtrl", function ($scope, $log) {
+
+        // $scope.clicks = 0;
+        // $scope.setClick = function() {
+        //   ++$scope.clicks
+        // }
+
+        $scope.enterLeave = "Mouse over the columns";
+        $scope.setEnter = function (e, col) {
+          $log.info(e);
+          $scope.enterLeave = "Entered " + col;
+        };
+        $scope.setLeave = function(col) {
+          $scope.enterLeave = "Left " + col;
+        };
+      })
+    </script>
+  </body>
+
+</html>
